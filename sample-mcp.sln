@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.36105.23 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ae-sample-mcp-lib", "ae-sample-mcp-lib\ae-sample-mcp-lib.csproj", "{A5C2B652-05E0-461A-83BF-E2D20ED28BF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ae-sample-mcp-srvstdio", "ae-sample-mcp-srvstdio\ae-sample-mcp-srvstdio.csproj", "{2FD17DC5-AB13-4462-92EB-24C941862C7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ae-sample-mcp-unittests", "ae-sample-mcp-unittests\ae-sample-mcp-unittests.csproj", "{E6A1524E-5857-41AF-9C68-75C705589E83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5C2B652-05E0-461A-83BF-E2D20ED28BF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5C2B652-05E0-461A-83BF-E2D20ED28BF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5C2B652-05E0-461A-83BF-E2D20ED28BF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5C2B652-05E0-461A-83BF-E2D20ED28BF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FD17DC5-AB13-4462-92EB-24C941862C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FD17DC5-AB13-4462-92EB-24C941862C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FD17DC5-AB13-4462-92EB-24C941862C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD17DC5-AB13-4462-92EB-24C941862C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6A1524E-5857-41AF-9C68-75C705589E83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6A1524E-5857-41AF-9C68-75C705589E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6A1524E-5857-41AF-9C68-75C705589E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6A1524E-5857-41AF-9C68-75C705589E83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E6A1524E-5857-41AF-9C68-75C705589E83} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1FB4DD5E-A642-4012-87C0-3E28723D8F3B}
+	EndGlobalSection
+EndGlobal
