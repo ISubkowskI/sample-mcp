@@ -1,9 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Ae.Sample.Mcp.Services
+namespace Ae.Sample.Mcp.Services;
+
+public interface IDtoValidator
 {
-    public interface IDtoValidator
-    {
-        bool TryValidate(object obj, out ICollection<ValidationResult> validationResults);
-    }
+    bool TryValidate(object obj, out ICollection<ValidationResult> validationResults);
 }

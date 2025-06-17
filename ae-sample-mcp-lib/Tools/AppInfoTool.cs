@@ -5,36 +5,35 @@ using System.Text.Json;
 using Ae.Sample.Mcp.Dtos;
 using Ae.Sample.Mcp.Settings;
 
-namespace Ae.Sample.Mcp.Tools
+namespace Ae.Sample.Mcp.Tools;
+
+/// <summary>
+/// Provides MCP server tools for retrieving application information.
+/// This static class contains methods exposed through the MCP server interface
+/// to provide details about the running application.
+/// </summary>
+[McpServerToolType]
+public static class AppInfoTool
 {
+    private static readonly JsonSerializerOptions JsonSerializerOptions = new() { WriteIndented = false };
+
     /// <summary>
-    /// Provides MCP server tools for retrieving application information.
-    /// This static class contains methods exposed through the MCP server interface
-    /// to provide details about the running application.
+    /// Returns the current application version and time information as a JSON object.
     /// </summary>
-    [McpServerToolType]
-    public static class AppInfoTool
+    [McpServerTool(Name = "General.GetAppVersion"), Description("Returns the current application version, local time, UTC time, and UTC ticks as a JSON object.")]
+    public static string GetAppVersion(IOptions<AppOptions> appOptions)
     {
-        private static readonly JsonSerializerOptions JsonSerializerOptions = new() { WriteIndented = false };
+        string appVersion = appOptions?.Value?.Version ?? "?.?";
 
-        /// <summary>
-        /// Returns the current application version and time information as a JSON object.
-        /// </summary>
-        [McpServerTool(Name = "General.GetAppVersion"), Description("Returns the current application version, local time, UTC time, and UTC ticks as a JSON object.")]
-        public static string GetAppVersion(IOptions<AppOptions> appOptions)
+        var dt = DateTimeOffset.Now;
+        var dto = new AppVersionDto
         {
-            string appVersion = appOptions?.Value?.Version ?? "?.?";
+            AppVersion = appVersion,
+            AppNow = dt,
+            AppNowUtc = dt.ToUniversalTime(),
+            AppUtcTicks = dt.UtcTicks,
+        };
 
-            var dt = DateTimeOffset.Now;
-            var dto = new AppVersionDto
-            {
-                AppVersion = appVersion,
-                AppNow = dt,
-                AppNowUtc = dt.ToUniversalTime(),
-                AppUtcTicks = dt.UtcTicks,
-            };
-
-            return JsonSerializer.Serialize(dto, JsonSerializerOptions);
-        }
+        return JsonSerializer.Serialize(dto, JsonSerializerOptions);
     }
 }
