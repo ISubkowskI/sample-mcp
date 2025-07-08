@@ -1,12 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Authentication;
 using Ae.Sample.Mcp.Tools;
 using Ae.Sample.Mcp.Services;
 using Ae.Sample.Mcp.Settings;
 using Ae.Sample.Mcp.Profiles;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Authentication;
 using Ae.Sample.Mcp.Authentication;
 
 Log.Logger = new LoggerConfiguration()
@@ -40,12 +40,12 @@ try
     builder.Services.AddScoped<IDtoValidator, DtoValidator>();
     builder.Services.AddHttpClient<IClaimClient, ClaimClient>();
 
-    // Resolve AppOptions
     var appOptions = builder.Configuration.GetSection(AppOptions.App).Get<AppOptions>() ?? new AppOptions();
     Log.Information($"{appOptions.Name} ver:{appOptions.Version}");
 
     // Add Authentication Services
-    var srvAuthOptions = builder.Configuration.GetSection(ServerAuthenticationOptions.Authentication).Get<ServerAuthenticationOptions>() ?? new ServerAuthenticationOptions();
+    var srvAuthOptions = builder.Configuration.GetSection(ServerAuthenticationOptions.Authentication).Get<ServerAuthenticationOptions>()
+        ?? new ServerAuthenticationOptions();
     builder.Services.AddAuthentication(srvAuthOptions.Scheme)
         .AddScheme<AuthenticationSchemeOptions, ServerFixedTokenAuthenticationHandler>(srvAuthOptions.Scheme, options =>
         {
@@ -67,7 +67,7 @@ try
     var webapp = builder.Build();
     webapp.UseAuthentication();
     webapp.UseAuthorization();
-    webapp.MapMcp()
+    webapp.MapMcp(appOptions.MapMcpPattern)
         .RequireAuthorization(); // Protect the MCP endpoint
 
     await webapp.RunAsync(appOptions.Url);
@@ -75,11 +75,10 @@ try
 }
 catch (Exception exc)
 {
-    Log.Fatal(exc, "WebApplication terminated unexpectedly");
+    Log.Fatal(exc, "Host terminated unexpectedly");
     return 1;
 }
 finally
 {
     Log.CloseAndFlush();
 }
-

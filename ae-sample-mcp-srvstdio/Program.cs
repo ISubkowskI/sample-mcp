@@ -37,7 +37,6 @@ try
     builder.Services.AddScoped<IDtoValidator, DtoValidator>();
     builder.Services.AddHttpClient<IClaimClient, ClaimClient>();
 
-    // Resolve AppOptions to get the version for ServerInfo
     var appOptions = builder.Configuration.GetSection(AppOptions.App).Get<AppOptions>() ?? new AppOptions();
     Log.Information($"{appOptions.Name} ver:{appOptions.Version}");
 

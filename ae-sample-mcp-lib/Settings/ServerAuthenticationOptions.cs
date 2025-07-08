@@ -1,10 +1,11 @@
-﻿namespace Ae.Sample.Mcp.Settings;
-
-public sealed class ServerAuthenticationOptions
+﻿namespace Ae.Sample.Mcp.Settings
 {
-    public const string Authentication = "Authentication"; // Configuration section name
+    public sealed class ServerAuthenticationOptions
+    {
+        public const string Authentication = "Authentication"; // Configuration section name
 
-    public string Scheme { get; set; } = "Bearer";
+        public string Scheme { get; set; } = "Bearer";
 
-    public string ExpectedToken { get; set; } = "*";
+        public string ExpectedToken { get; set; } = "*";
+    }
 }
