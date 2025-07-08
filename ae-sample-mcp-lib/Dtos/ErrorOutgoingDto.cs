@@ -1,8 +1,7 @@
-﻿namespace Ae.Sample.Mcp.Dtos
+﻿namespace Ae.Sample.Mcp.Dtos;
+
+public sealed record ErrorOutgoingDto
 {
-    public sealed record ErrorOutgoingDto
-    {
-        public IEnumerable<string?>? Errors { get; init; } = [];
-        public string? Status { get; init; } = string.Empty;
-    }
+    public IEnumerable<string?>? Errors { get; init; } = [];
+    public string? Status { get; init; } = string.Empty;
 }

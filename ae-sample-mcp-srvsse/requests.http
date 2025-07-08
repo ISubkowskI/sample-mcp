@@ -1,0 +1,15 @@
+// IMPORTANT: Replace the placeholder below with the actual value of
+// "ExpectedToken" from your appsettings.json file.
+@token = YOUR_SUPER_SECRET_AND_UNIQUE_TOKEN_REPLACE_ME
+@baseUrl = http://localhost:3001
+
+###
+# @name sseStream
+# Test the Server-Sent Events (SSE) stream.
+#
+# This requires the ae-sample-mcp-srvsse project to be running.
+# The response will be a stream of events.
+GET {{baseUrl}}/mcp/sse
+Authorization: Bearer {{token}}
+Accept: text/event-stream
+
