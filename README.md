@@ -13,11 +13,14 @@ This project is a sample MCP server that communicates over standard input/output
 
 It is designed to work with the Model Context Protocol (MCP) Inspector, which lets you inspect and debug the communication between your application and the MCP server.
 
-To start the inspector, navigate to the application folder and run the following command using Node.js:
+To start the inspector, navigate to the application folder (/ae-sample-mcp-srvstdio) and run the following command using Node.js:
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
 ```
-Transport Type: STDIO
+Open inspector with token pre-filled.
+
+MCP Inspector settings:
+- Transport Type: STDIO
 
 ## Transport StreamableHttp. Server-Sent Events (SSE) StreamableHttp
 - ae-sample-mcp-srvsse (Startup project)
@@ -28,13 +31,19 @@ This project is a sample MCP server that communicates over HTTP using Server-Sen
 
 ### MCP Inspector
 
-To start the inspector, navigate to the application folder (/ae-sample-mcp-srvsse) and run the following command using Node.js:
-
+Start mcp server. Navigate to the application folder (/ae-sample-mcp-srvsse) and run the following command:
 ```bash
-npx @modelcontextprotocol/inspector dotnet run
+dotnet run
 ```
 
+To start the inspector, run the following command using Node.js:
+```bash
+npx @modelcontextprotocol/inspector
+```
+Open inspector with token pre-filled.
+
+MCP Inspector settings:
 Transport Type: SSE
 URL: http://localhost:3001/mcp/sse
-Bearer Token: YOUR_SUPER_SECRET_AND_UNIQUE_TOKEN_REPLACE_ME
+Authorization -> Bearer Token: YOUR_SUPER_SECRET_AND_UNIQUE_TOKEN_REPLACE_ME
 
