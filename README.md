@@ -1,6 +1,9 @@
 # sample-mcp
 
-This repository contains sample projects demonstrating the Model Context Protocol (MCP).
+This repository contains sample projects demonstrating the Model Context Protocol (MCP). This application communicates with a backend REST Web API to function. 
+
+## Communicating with the backend REST API
+Before running the application, you need to ensure the required API service is running. Please start the `ae-sample-identity-webapi` service from the `sample-identity-jwt` repository. Refer to the instructions within the `sample-identity-jwt` repository to build and run the service.
 
 ## Transport STDIO
 - ae-sample-mcp-srvstdio (Startup project)
