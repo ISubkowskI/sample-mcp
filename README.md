@@ -22,7 +22,11 @@ Open inspector with token pre-filled.
 MCP Inspector settings:
 - Transport Type: STDIO
 
+<<<<<<< HEAD
 ## Transport StreamableHttp. Server-Sent Events (SSE) StreamableHttp
+=======
+## Transport StreamableHttp. Server-Sent Events (SSE)
+>>>>>>> develop
 - ae-sample-mcp-srvsse (Startup project)
 - ae-sample-mcp-lib
 - ae-sample-mcp-unittests
@@ -43,7 +47,13 @@ npx @modelcontextprotocol/inspector
 Open inspector with token pre-filled.
 
 MCP Inspector settings:
+<<<<<<< HEAD
 Transport Type: SSE
 URL: http://localhost:3001/mcp/sse
 Authorization -> Bearer Token: YOUR_SUPER_SECRET_AND_UNIQUE_TOKEN_REPLACE_ME
+=======
+- Transport Type: SSE
+- URL: http://localhost:3001/mcp/sse
+- Authorization -> Bearer Token: YOUR_SUPER_SECRET_AND_UNIQUE_TOKEN_REPLACE_ME
+>>>>>>> develop
 
